@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Namaz | Huzurlu Ritim</title>
+<style>
+:root{--bg:#f7f3ec;--ink:#1e3a34;--muted:#6d766f;--gold:#b8a37a;--line:rgba(30,58,52,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at top left,rgba(184,163,122,.15),transparent 28%),linear-gradient(#fbf8f2,#f4eee3)}
+.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.brand{font:700 34px Georgia,serif}.nav{display:flex;gap:22px}.nav a{color:inherit;text-decoration:none;font-weight:600}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;padding:64px 0 38px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted)}h1{font:700 clamp(48px,7vw,80px)/.95 Georgia,serif;margin:14px 0 20px}.lead{font-size:18px;line-height:1.7;color:var(--muted)}.stageShell{position:relative}.stage{aspect-ratio:1;border:1px solid rgba(184,163,122,.28);border-radius:40px;background:rgba(255,255,255,.42);box-shadow:0 20px 60px rgba(30,58,52,.08);position:relative;overflow:hidden}.stage:before{content:"";position:absolute;inset:10% 12%;border:1px solid rgba(184,163,122,.3);border-bottom:0;border-radius:50% 50% 12px 12px}.figure{position:absolute;inset:5%;width:90%;height:90%}.pose{opacity:0;transition:opacity .8s ease}.pose.active{opacity:1}.figure circle,.figure path{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.rug{stroke:var(--gold)!important;stroke-width:4!important;opacity:.55}.label{text-align:center;margin-top:16px}.label small{display:block;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}.label strong{font:700 34px Georgia,serif}.dots{display:flex;justify-content:center;gap:8px;margin-top:8px}.dot{width:8px;height:8px;border-radius:50%;background:#cfd6d1}.dot.active{background:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:22px 0 54px}.card{padding:24px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.5)}.card h2{font:700 28px Georgia,serif;margin:0 0 12px}.card p{color:var(--muted);line-height:1.7;margin:0}
+.surah{padding:18px 0 56px}.surah h2{font:700 clamp(36px,5vw,54px) Georgia,serif;margin:8px 0 18px}.ticker{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.55)}.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:24px 0;will-change:transform}.arabic{font-family:"Times New Roman",serif;font-size:30px;direction:rtl}.tag{letter-spacing:.15em;color:var(--muted);font-size:12px}.sep{color:var(--gold);font-size:22px}.footer{display:flex;justify-content:space-between;gap:20px;padding:24px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.top{align-items:flex-start;gap:16px;flex-direction:column}.nav{flex-wrap:wrap}.footer{flex-direction:column}.stage{max-width:520px;margin:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand">Namaz</div>
+  <nav class="nav"><a href="#anasayfa">Ana Sayfa</a><a href="#hareketler">Hareketler</a><a href="#sureler">Sureler</a></nav>
+</header>
+
+<main>
+<section class="hero" id="anasayfa">
+  <div>
+    <p class="eyebrow">Namazın adımlarını görsel ritimle takip et</p>
+    <h1>Namazın Huzurlu Ritmi</h1>
+    <p class="lead">Line art bir figür kıyamdan rükûya, secdeden oturuşa kadar namazın temel hareketlerini sürekli tekrar eder. Alt bölümde Fâtiha ve Asr sureleri kesintisiz akar.</p>
+  </div>
+  <div class="stageShell">
+    <div class="stage">
+      <svg class="figure" viewBox="0 0 340 340" aria-label="Namaz hareketleri animasyonu">
+        <g class="pose active" data-label="Kıyam">
+          <circle cx="170" cy="64" r="20"/><path d="M155 84Q170 92 185 84M170 85V185M140 116Q155 128 164 144M200 116Q185 128 176 144M170 185L155 262M170 185L185 262M155 262L145 314M185 262L195 314M141 315H162M178 315H199"/><path class="rug" d="M102 324H238"/>
+        </g>
+        <g class="pose" data-label="Rükû">
+          <circle cx="224" cy="84" r="19"/><path d="M210 99Q222 103 234 98M150 136L214 116M214 116L238 174M170 142L192 176M199 129L219 166M237 174L228 255M237 174L263 252M228 255L212 313M263 252L276 313M202 313H225M265 313H288"/><path class="rug" d="M104 324H292"/>
+        </g>
+        <g class="pose" data-label="Secde">
+          <circle cx="216" cy="228" r="18"/><path d="M202 239Q215 243 226 238M132 201Q172 182 206 208M206 208L232 244M153 207L184 252M188 204L206 245M129 202L106 270M129 202L168 274M106 270L92 314M168 274L181 314M82 314H105M173 314H195M224 247L246 314M236 314H262"/><path class="rug" d="M72 324H274"/>
+        </g>
+        <g class="pose" data-label="Oturuş">
+          <circle cx="202" cy="88" r="19"/><path d="M188 102Q201 108 214 102M202 106L205 188M176 130Q188 152 193 176M228 130Q218 150 213 176M205 188Q174 218 162 255M205 188Q217 220 240 254M160 255H233M233 255L258 313M161 255L120 313M111 313H139M246 313H272"/><path class="rug" d="M96 324H284"/>
+        </g>
+      </svg>
+    </div>
+    <div class="label"><small>Aktif hareket</small><strong id="poseLabel">Kıyam</strong><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+  </div>
+</section>
+
+<section class="cards" id="hareketler">
+  <article class="card"><h2>Hareket Akışı</h2><p>Kıyam | Rükû | Secde | Oturuş döngüsü yumuşak geçişlerle sürekli ilerler.</p></article>
+  <article class="card"><h2>Line Art</h2><p>Çizgisel, sade ve dikkat dağıtmayan bir görsel dil kullanılır.</p></article>
+  <article class="card"><h2>Sure Akışı</h2><p>Fâtiha ve Asr sureleri sayfanın altında kesintisiz kayan bir şerit halinde okunur.</p></article>
+</section>
+
+<section class="surah" id="sureler">
+  <p class="eyebrow">Namazda okunan sureler</p><h2>Fâtiha ve Asr</h2>
+  <div class="ticker"><div class="track" id="track">
+    <span class="tag">FÂTİHA</span>
+    <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ | الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | الرَّحْمَٰنِ الرَّحِيمِ | مَالِكِ يَوْمِ الدِّينِ | إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ | اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ | صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
+    <span class="sep">✦</span><span class="tag">ASR</span>
+    <span class="arabic">وَالْعَصْرِ | إِنَّ الْإِنسَانَ لَفِي خُسْرٍ | إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ</span>
+    <span class="sep">✦</span>
+  </div></div>
+</section>
+</main>
+
+<footer class="footer"><span>Namaz | sade bir hatırlatma alanı</span><span>İyi amellerle daha güzel yarınlara.</span></footer>
+</div>
+
+<script>
+const poses=[...document.querySelectorAll('.pose')],dots=[...document.querySelectorAll('.dot')],label=document.getElementById('poseLabel');let i=0;
+function show(n){poses.forEach((p,j)=>p.classList.toggle('active',j===n));dots.forEach((d,j)=>d.classList.toggle('active',j===n));label.textContent=poses[n].dataset.label}
+setInterval(()=>{i=(i+1)%poses.length;show(i)},2400);show(i);
+const track=document.getElementById('track');track.innerHTML+=track.innerHTML;let x=0,pause=false;
+function tick(){if(!pause){x-=.45;if(Math.abs(x)>=track.scrollWidth/2)x=0;track.style.transform='translateX('+x+'px)'}requestAnimationFrame(tick)}
+track.parentElement.addEventListener('mouseenter',()=>pause=true);track.parentElement.addEventListener('mouseleave',()=>pause=false);tick();
+</script>
+</body>
+</html>
