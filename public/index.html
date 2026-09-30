@@ -5,262 +5,122 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Namaz</title>
 <style>
-:root{
-  --bg:#f7f2e8;
-  --paper:#fbf8f2;
-  --ink:#183b33;
-  --muted:#758079;
-  --gold:#b39a70;
-  --line:rgba(24,59,51,.13);
-}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
-body{
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:
-    radial-gradient(circle at 18% 0%,rgba(179,154,112,.13),transparent 30%),
-    radial-gradient(circle at 86% 10%,rgba(24,59,51,.06),transparent 25%),
-    linear-gradient(180deg,#fcf9f3 0%,#f6efe3 100%);
-}
+:root{--bg:#f7f2e8;--paper:#fbf8f2;--ink:#183b33;--muted:#758079;--gold:#b39a70;--line:rgba(24,59,51,.13)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 18% 0%,rgba(179,154,112,.13),transparent 30%),radial-gradient(circle at 86% 10%,rgba(24,59,51,.06),transparent 25%),linear-gradient(180deg,#fcf9f3 0%,#f6efe3 100%)}
 .shell{width:min(1040px,calc(100% - 28px));margin:auto}
-header{
-  height:82px;display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid var(--line)
-}
-.brand{font:700 36px/1 Georgia,"Times New Roman",serif;letter-spacing:-.02em}
-.header-note{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-main{padding:46px 0 52px}
-.hero{text-align:center}
-.kicker{margin:0 0 10px;color:var(--muted);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
-h1{font:700 clamp(48px,7vw,78px)/.95 Georgia,"Times New Roman",serif;margin:0 0 10px}
-.sub{margin:0 auto 28px;max-width:580px;color:var(--muted);line-height:1.7;font-size:16px}
-.stage{
-  position:relative;
-  width:min(760px,100%);
-  margin:0 auto;
-  aspect-ratio: 1.34 / 1;
-  border:1px solid rgba(179,154,112,.26);
-  border-radius:36px;
-  overflow:hidden;
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.32)),
-    radial-gradient(circle at 50% 18%,rgba(179,154,112,.13),transparent 34%);
-  box-shadow:0 24px 70px rgba(24,59,51,.08);
-}
-.stage:before{
-  content:"";position:absolute;left:12%;right:12%;top:8%;bottom:11%;
-  border:1px solid rgba(179,154,112,.25);border-bottom:0;
-  border-radius:50% 50% 20px 20px;pointer-events:none
-}
-.stage:after{
-  content:"";position:absolute;left:14%;right:14%;bottom:12%;
-  height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55
-}
-#figure{width:100%;height:100%;display:block}
-.body-line{
-  fill:none;stroke:var(--ink);stroke-width:6;
-  stroke-linecap:round;stroke-linejoin:round;
-  vector-effect:non-scaling-stroke
-}
-.body-soft{stroke-width:4;opacity:.85}
-.garment{fill:none;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;opacity:.96}
-.rug{fill:none;stroke:var(--gold);stroke-width:3;opacity:.55}
-.shadow{fill:rgba(24,59,51,.035);stroke:none}
-#poseLabel{
-  margin:18px 0 2px;
-  font:700 30px/1 Georgia,"Times New Roman",serif
-}
-#poseHint{margin:0;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-.surah{margin-top:54px}
-.surah-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
-.surah h2{margin:0;font:700 36px/1 Georgia,"Times New Roman",serif}
-.surah-head span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.ticker{
-  overflow:hidden;border:1px solid var(--line);border-radius:22px;
-  background:rgba(255,255,255,.56);box-shadow:0 14px 36px rgba(24,59,51,.05)
-}
-.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:22px 0;will-change:transform}
-.tag{font-size:12px;letter-spacing:.16em;color:var(--muted);flex:none}
-.arabic{font-family:"Amiri","Times New Roman",serif;font-size:29px;direction:rtl;flex:none}
-.sep{color:var(--gold);font-size:18px;flex:none}
-footer{
-  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
-  padding:28px 0 36px;border-top:1px solid var(--line);
-  color:var(--muted);font-size:13px
-}
-@media(max-width:700px){
-  header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}
-  main{padding-top:32px}
-  .stage{aspect-ratio:1/1.05;border-radius:28px}
-  .sub{font-size:15px}
-  .arabic{font-size:25px}
-  .surah-head{align-items:flex-start;flex-direction:column}
-}
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important}
-}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{font:700 36px/1 Georgia,"Times New Roman",serif;letter-spacing:-.02em}.header-note{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+main{padding:46px 0 52px}.hero{text-align:center}.kicker{margin:0 0 10px;color:var(--muted);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+h1{font:700 clamp(48px,7vw,78px)/.95 Georgia,"Times New Roman",serif;margin:0 0 10px}.sub{margin:0 auto 28px;max-width:580px;color:var(--muted);line-height:1.7;font-size:16px}
+.stage{position:relative;width:min(760px,100%);margin:0 auto;aspect-ratio:1.34/1;border:1px solid rgba(179,154,112,.26);border-radius:36px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.32)),radial-gradient(circle at 50% 18%,rgba(179,154,112,.13),transparent 34%);box-shadow:0 24px 70px rgba(24,59,51,.08)}
+.stage:before{content:"";position:absolute;left:12%;right:12%;top:8%;bottom:11%;border:1px solid rgba(179,154,112,.25);border-bottom:0;border-radius:50% 50% 20px 20px;pointer-events:none}
+.stage:after{content:"";position:absolute;left:14%;right:14%;bottom:12%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
+#figure{width:100%;height:100%;display:block}.body-line{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.body-soft{stroke-width:4;opacity:.85}.garment{fill:none;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;opacity:.96}.rug{fill:none;stroke:var(--gold);stroke-width:3;opacity:.55}.shadow{fill:rgba(24,59,51,.035);stroke:none}
+#poseLabel{margin:18px 0 2px;font:700 30px/1 Georgia,"Times New Roman",serif}#poseHint{margin:0;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.surah{margin-top:54px}.surah-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}.surah h2{margin:0;font:700 36px/1 Georgia,"Times New Roman",serif}.surah-head span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.ticker{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 14px 36px rgba(24,59,51,.05)}.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:22px 0;will-change:transform}.tag{font-size:12px;letter-spacing:.16em;color:var(--muted);flex:none}.arabic{font-family:"Amiri","Times New Roman",serif;font-size:29px;direction:rtl;flex:none}.sep{color:var(--gold);font-size:18px;flex:none}
+footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:700px){header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}main{padding-top:32px}.stage{aspect-ratio:1/1.05;border-radius:28px}.sub{font-size:15px}.arabic{font-size:25px}.surah-head{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <div class="shell">
-  <header>
-    <div class="brand">Namaz</div>
-    <div class="header-note">Kıyam · Rükû · Secde · Oturuş · Selam</div>
-  </header>
+<header>
+  <div class="brand">Namaz</div>
+  <div class="header-note">Kıyam · Rükû · Secde · Oturuş · Selam</div>
+</header>
 
-  <main>
-    <section class="hero">
-      <p class="kicker">Hareketin içinde sükûnet</p>
-      <h1>Namaz</h1>
-      <p class="sub">Tek bir line art figür, iki rekâtlık örnek akış boyunca kesintisiz hareket eder.</p>
+<main>
+  <section class="hero">
+    <p class="kicker">Hareketin içinde sükûnet</p>
+    <h1>Namaz</h1>
+    <p class="sub">Tek bir line art figür, iki rekâtlık örnek akış boyunca kesintisiz hareket eder.</p>
 
-      <div class="stage" aria-label="Namaz hareketlerini gösteren akıcı line art animasyon">
-        <svg id="figure" viewBox="0 0 620 470" role="img" aria-labelledby="figureTitle figureDesc">
-          <title id="figureTitle">Namaz hareketleri</title>
-          <desc id="figureDesc">Tekbir, kıyam, rükû, doğrulma, secde, oturuş ve selam hareketleri arasında akıcı şekilde geçen çizgisel insan figürü.</desc>
-          <ellipse id="floorShadow" class="shadow" cx="310" cy="414" rx="128" ry="13"/>
-          <path class="rug" d="M150 423 Q310 410 470 423"/>
-          <path id="torsoL" class="body-line garment"/>
-          <path id="torsoR" class="body-line garment"/>
-          <path id="shoulders" class="body-line body-soft"/>
-          <path id="hips" class="body-line body-soft"/>
-          <path id="leftArm" class="body-line"/>
-          <path id="rightArm" class="body-line"/>
-          <path id="leftLeg" class="body-line"/>
-          <path id="rightLeg" class="body-line"/>
-          <circle id="head" class="body-line" r="20"/>
-          <path id="cap" class="body-line body-soft"/>
-          <path id="face" class="body-line body-soft"/>
-          <path id="leftFoot" class="body-line body-soft"/>
-          <path id="rightFoot" class="body-line body-soft"/>
-          <circle id="leftHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-          <circle id="rightHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-        </svg>
+    <div class="stage" aria-label="Namaz hareketlerini gösteren akıcı line art animasyon">
+      <svg id="figure" viewBox="0 0 620 470" role="img" aria-labelledby="figureTitle figureDesc">
+        <title id="figureTitle">Namaz hareketleri</title>
+        <desc id="figureDesc">Tekbir, kıyam, rükû, doğrulma, secde, oturuş ve selam hareketleri arasında akıcı şekilde geçen çizgisel insan figürü.</desc>
+        <ellipse id="floorShadow" class="shadow" cx="310" cy="414" rx="128" ry="13"/>
+        <path class="rug" d="M150 423 Q310 410 470 423"/>
+        <path id="torsoL" class="body-line garment"/>
+        <path id="torsoR" class="body-line garment"/>
+        <path id="shoulders" class="body-line body-soft"/>
+        <path id="hips" class="body-line body-soft"/>
+        <path id="leftArm" class="body-line"/>
+        <path id="rightArm" class="body-line"/>
+        <path id="leftLeg" class="body-line"/>
+        <path id="rightLeg" class="body-line"/>
+        <circle id="head" class="body-line" r="20"/>
+        <path id="cap" class="body-line body-soft"/>
+        <path id="face" class="body-line body-soft"/>
+        <path id="leftFoot" class="body-line body-soft"/>
+        <path id="rightFoot" class="body-line body-soft"/>
+        <circle id="leftHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+        <circle id="rightHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+      </svg>
+    </div>
+
+    <div id="poseLabel">Niyet</div>
+    <p id="poseHint">Hazırlık</p>
+  </section>
+
+  <section class="surah" id="sureler">
+    <div class="surah-head">
+      <h2>Fâtiha · Asr</h2>
+      <span>Kesintisiz akış</span>
+    </div>
+    <div class="ticker">
+      <div class="track" id="track">
+        <span class="tag">FÂTİHA</span>
+        <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ | الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | الرَّحْمَٰنِ الرَّحِيمِ | مَالِكِ يَوْمِ الدِّينِ | إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ | اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ | صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
+        <span class="sep">✦</span>
+        <span class="tag">ASR</span>
+        <span class="arabic">وَالْعَصْرِ | إِنَّ الْإِنسَانَ لَفِي خُسْرٍ | إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ</span>
+        <span class="sep">✦</span>
       </div>
+    </div>
+  </section>
+</main>
 
-      <div id="poseLabel">Niyet</div>
-      <p id="poseHint">Hazırlık</p>
-    </section>
-
-    <section class="surah" id="sureler">
-      <div class="surah-head">
-        <h2>Fâtiha · Asr</h2>
-        <span>Kesintisiz akış</span>
-      </div>
-      <div class="ticker">
-        <div class="track" id="track">
-          <span class="tag">FÂTİHA</span>
-          <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ | الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | الرَّحْمَٰنِ الرَّحِيمِ | مَالِكِ يَوْمِ الدِّينِ | إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ | اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ | صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
-          <span class="sep">✦</span>
-          <span class="tag">ASR</span>
-          <span class="arabic">وَالْعَصْرِ | إِنَّ الْإِنسَانَ لَفِي خُسْرٍ | إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ</span>
-          <span class="sep">✦</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>Namaz</span>
-    <span>Sade · Huzurlu · Devamlı</span>
-  </footer>
+<footer>
+  <span>Namaz</span>
+  <span>Sade · Huzurlu · Devamlı</span>
+</footer>
 </div>
 
 <script>
 const $=id=>document.getElementById(id);
-const els={
-  torsoL:$('torsoL'),torsoR:$('torsoR'),shoulders:$('shoulders'),hips:$('hips'),
-  leftArm:$('leftArm'),rightArm:$('rightArm'),leftLeg:$('leftLeg'),rightLeg:$('rightLeg'),
-  head:$('head'),cap:$('cap'),face:$('face'),leftFoot:$('leftFoot'),rightFoot:$('rightFoot'),
-  leftHand:$('leftHand'),rightHand:$('rightHand'),shadow:$('floorShadow')
-};
+const els={torsoL:$('torsoL'),torsoR:$('torsoR'),shoulders:$('shoulders'),hips:$('hips'),leftArm:$('leftArm'),rightArm:$('rightArm'),leftLeg:$('leftLeg'),rightLeg:$('rightLeg'),head:$('head'),cap:$('cap'),face:$('face'),leftFoot:$('leftFoot'),rightFoot:$('rightFoot'),leftHand:$('leftHand'),rightHand:$('rightHand'),shadow:$('floorShadow')};
 const pt=(x,y)=>[x,y];
-const stand={
-  head:pt(310,92),neck:pt(310,119),ls:pt(280,132),rs:pt(340,132),
-  lh:pt(292,250),rh:pt(328,250),le:pt(275,194),re:pt(345,194),
-  lhip:pt(292,258),rhip:pt(328,258),lk:pt(292,333),rk:pt(328,333),
-  la:pt(286,406),ra:pt(334,406),face:pt(4,12),shadow:[310,414,105]
-};
+const stand={head:pt(310,92),neck:pt(310,119),ls:pt(280,132),rs:pt(340,132),lh:pt(292,250),rh:pt(328,250),le:pt(275,194),re:pt(345,194),lhip:pt(292,258),rhip:pt(328,258),lk:pt(292,333),rk:pt(328,333),la:pt(286,406),ra:pt(334,406),face:pt(4,12),shadow:[310,414,105]};
+const secde={label:'Secde',hint:'Alın yerde',ms:2200,head:pt(388,388),neck:pt(365,376),ls:pt(335,355),rs:pt(360,360),le:pt(326,387),re:pt(354,392),lh:pt(318,407),rh:pt(346,410),lhip:pt(278,305),rhip:pt(306,310),lk:pt(250,344),rk:pt(292,350),la:pt(238,406),ra:pt(288,406),face:pt(12,4),shadow:[305,414,124]};
+const celse={label:'Celse',hint:'Topuklar üzerine oturuş',ms:1700,head:pt(316,170),neck:pt(316,198),ls:pt(286,212),rs:pt(346,212),le:pt(282,262),re:pt(350,262),lh:pt(278,312),rh:pt(344,312),lhip:pt(290,318),rhip:pt(328,318),lk:pt(250,350),rk:pt(362,350),la:pt(228,406),ra:pt(386,406),face:pt(4,12),shadow:[307,414,118]};
+const tahiyyat={label:'Tahiyyat',hint:'Son oturuş',ms:2600,head:pt(316,170),neck:pt(316,198),ls:pt(286,212),rs:pt(346,212),le:pt(282,262),re:pt(346,258),lh:pt(278,312),rh:pt(340,302),lhip:pt(290,318),rhip:pt(328,318),lk:pt(250,350),rk:pt(362,350),la:pt(228,406),ra:pt(386,406),face:pt(4,12),shadow:[307,414,118]};
 const poses=[
   {label:'Niyet',hint:'Hazırlık',ms:1300,...stand},
-  {label:'İftitah Tekbiri',hint:'Allahu Ekber',ms:1500,...stand,
-    le:pt(260,158),re:pt(360,158),lh:pt(278,102),rh:pt(342,102)},
-  {label:'Kıyam',hint:'Kıraat',ms:2500,...stand,
-    le:pt(282,188),re:pt(338,188),lh:pt(302,210),rh:pt(318,210)},
-  {label:'Rükû',hint:'Rükû',ms:2100,
-    head:pt(405,168),neck:pt(382,181),ls:pt(344,182),rs:pt(373,193),
-    le:pt(320,240),re:pt(345,245),lh:pt(292,292),rh:pt(315,296),
-    lhip:pt(245,190),rhip:pt(274,202),lk:pt(254,302),rk:pt(286,302),
-    la:pt(246,406),ra:pt(302,406),face:pt(12,5),shadow:[312,414,130]},
-  {label:'Kavme',hint:'Doğrulma',ms:1600,...stand,
-    le:pt(276,205),re:pt(344,205),lh:pt(282,265),rh:pt(338,265)},
-  {label:'Secde',hint:'Birinci Secde',ms:2200,
-    head:pt(405,338),neck:pt(378,326),ls:pt(345,310),rs:pt(371,320),
-    le:pt(350,360),re:pt(378,366),lh:pt(334,407),rh:pt(382,407),
-    lhip:pt(248,272),rhip:pt(278,282),lk:pt(208,354),rk:pt(246,365),
-    la:pt(184,407),ra:pt(226,407),face:pt(11,8),shadow:[293,414,150]},
-  {label:'Celse',hint:'İki Secde Arası',ms:1700,
-    head:pt(326,158),neck:pt(323,185),ls:pt(292,198),rs:pt(351,198),
-    le:pt(286,254),re:pt(351,254),lh:pt(280,311),rh:pt(347,311),
-    lhip:pt(274,318),rhip:pt(321,318),lk:pt(226,350),rk:pt(365,350),
-    la:pt(202,406),ra:pt(390,406),face:pt(4,11),shadow:[307,414,130]},
-  {label:'Secde',hint:'İkinci Secde',ms:2200,
-    head:pt(405,338),neck:pt(378,326),ls:pt(345,310),rs:pt(371,320),
-    le:pt(350,360),re:pt(378,366),lh:pt(334,407),rh:pt(382,407),
-    lhip:pt(248,272),rhip:pt(278,282),lk:pt(208,354),rk:pt(246,365),
-    la:pt(184,407),ra:pt(226,407),face:pt(11,8),shadow:[293,414,150]},
-  {label:'Kıyam',hint:'İkinci Rekât',ms:2300,...stand,
-    le:pt(282,188),re:pt(338,188),lh:pt(302,210),rh:pt(318,210)},
-  {label:'Rükû',hint:'Rükû',ms:2000,
-    head:pt(405,168),neck:pt(382,181),ls:pt(344,182),rs:pt(373,193),
-    le:pt(320,240),re:pt(345,245),lh:pt(292,292),rh:pt(315,296),
-    lhip:pt(245,190),rhip:pt(274,202),lk:pt(254,302),rk:pt(286,302),
-    la:pt(246,406),ra:pt(302,406),face:pt(12,5),shadow:[312,414,130]},
-  {label:'Kavme',hint:'Doğrulma',ms:1500,...stand,
-    le:pt(276,205),re:pt(344,205),lh:pt(282,265),rh:pt(338,265)},
-  {label:'Secde',hint:'Birinci Secde',ms:2100,
-    head:pt(405,338),neck:pt(378,326),ls:pt(345,310),rs:pt(371,320),
-    le:pt(350,360),re:pt(378,366),lh:pt(334,407),rh:pt(382,407),
-    lhip:pt(248,272),rhip:pt(278,282),lk:pt(208,354),rk:pt(246,365),
-    la:pt(184,407),ra:pt(226,407),face:pt(11,8),shadow:[293,414,150]},
-  {label:'Celse',hint:'İki Secde Arası',ms:1600,
-    head:pt(326,158),neck:pt(323,185),ls:pt(292,198),rs:pt(351,198),
-    le:pt(286,254),re:pt(351,254),lh:pt(280,311),rh:pt(347,311),
-    lhip:pt(274,318),rhip:pt(321,318),lk:pt(226,350),rk:pt(365,350),
-    la:pt(202,406),ra:pt(390,406),face:pt(4,11),shadow:[307,414,130]},
-  {label:'Secde',hint:'İkinci Secde',ms:2100,
-    head:pt(405,338),neck:pt(378,326),ls:pt(345,310),rs:pt(371,320),
-    le:pt(350,360),re:pt(378,366),lh:pt(334,407),rh:pt(382,407),
-    lhip:pt(248,272),rhip:pt(278,282),lk:pt(208,354),rk:pt(246,365),
-    la:pt(184,407),ra:pt(226,407),face:pt(11,8),shadow:[293,414,150]},
-  {label:'Tahiyyat',hint:'Son Oturuş',ms:2600,
-    head:pt(326,158),neck:pt(323,185),ls:pt(292,198),rs:pt(351,198),
-    le:pt(286,254),re:pt(350,250),lh:pt(280,311),rh:pt(344,302),
-    lhip:pt(274,318),rhip:pt(321,318),lk:pt(226,350),rk:pt(365,350),
-    la:pt(202,406),ra:pt(390,406),face:pt(4,11),shadow:[307,414,130]},
-  {label:'Sağa Selam',hint:'Selam',ms:1400,
-    head:pt(326,158),neck:pt(323,185),ls:pt(292,198),rs:pt(351,198),
-    le:pt(286,254),re:pt(350,250),lh:pt(280,311),rh:pt(344,302),
-    lhip:pt(274,318),rhip:pt(321,318),lk:pt(226,350),rk:pt(365,350),
-    la:pt(202,406),ra:pt(390,406),face:pt(16,2),shadow:[307,414,130]},
-  {label:'Sola Selam',hint:'Selam',ms:1400,
-    head:pt(326,158),neck:pt(323,185),ls:pt(292,198),rs:pt(351,198),
-    le:pt(286,254),re:pt(350,250),lh:pt(280,311),rh:pt(344,302),
-    lhip:pt(274,318),rhip:pt(321,318),lk:pt(226,350),rk:pt(365,350),
-    la:pt(202,406),ra:pt(390,406),face:pt(-16,2),shadow:[307,414,130]}
+  {label:'İftitah Tekbiri',hint:'Allahu Ekber',ms:1500,...stand,le:pt(260,158),re:pt(360,158),lh:pt(278,102),rh:pt(342,102)},
+  {label:'Kıyam',hint:'Kıraat',ms:2500,...stand,le:pt(282,188),re:pt(338,188),lh:pt(302,210),rh:pt(318,210)},
+  {label:'Rükû',hint:'Rükû',ms:2100,head:pt(405,168),neck:pt(382,181),ls:pt(344,182),rs:pt(373,193),le:pt(320,240),re:pt(345,245),lh:pt(292,292),rh:pt(315,296),lhip:pt(245,190),rhip:pt(274,202),lk:pt(254,302),rk:pt(286,302),la:pt(246,406),ra:pt(302,406),face:pt(12,5),shadow:[312,414,130]},
+  {label:'Kavme',hint:'Doğrulma',ms:1600,...stand,le:pt(276,205),re:pt(344,205),lh:pt(282,265),rh:pt(338,265)},
+  secde,
+  celse,
+  secde,
+  {label:'Kıyam',hint:'İkinci Rekât',ms:2300,...stand,le:pt(282,188),re:pt(338,188),lh:pt(302,210),rh:pt(318,210)},
+  {label:'Rükû',hint:'Rükû',ms:2000,head:pt(405,168),neck:pt(382,181),ls:pt(344,182),rs:pt(373,193),le:pt(320,240),re:pt(345,245),lh:pt(292,292),rh:pt(315,296),lhip:pt(245,190),rhip:pt(274,202),lk:pt(254,302),rk:pt(286,302),la:pt(246,406),ra:pt(302,406),face:pt(12,5),shadow:[312,414,130]},
+  {label:'Kavme',hint:'Doğrulma',ms:1500,...stand,le:pt(276,205),re:pt(344,205),lh:pt(282,265),rh:pt(338,265)},
+  secde,
+  celse,
+  secde,
+  tahiyyat,
+  {...tahiyyat,label:'Sağa Selam',hint:'Selam',ms:1400,face:pt(16,2)},
+  {...tahiyyat,label:'Sola Selam',hint:'Selam',ms:1400,face:pt(-16,2)}
 ];
-
 const keys=['head','neck','ls','rs','le','re','lh','rh','lhip','rhip','lk','rk','la','ra','face','shadow'];
 const mix=(a,b,t)=>a+(b-a)*t;
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-function interp(a,b,t){
-  const o={};
-  for(const k of keys){
-    const av=a[k],bv=b[k];
-    o[k]=av.map((v,i)=>mix(v,bv[i],t));
-  }
-  return o;
-}
+function interp(a,b,t){const o={};for(const k of keys){const av=a[k],bv=b[k];o[k]=av.map((v,i)=>mix(v,bv[i],t));}return o;}
 function q(a,b,c){return 'M '+a[0]+' '+a[1]+' Q '+b[0]+' '+b[1]+' '+c[0]+' '+c[1]}
 function line(a,b){return 'M '+a[0]+' '+a[1]+' L '+b[0]+' '+b[1]}
 function setPose(p){
@@ -273,58 +133,25 @@ function setPose(p){
   els.leftLeg.setAttribute('d',q(p.lhip,p.lk,p.la));
   els.rightLeg.setAttribute('d',q(p.rhip,p.rk,p.ra));
   els.head.setAttribute('cx',p.head[0]); els.head.setAttribute('cy',p.head[1]);
-  const r=20, hx=p.head[0],hy=p.head[1];
+  const r=20,hx=p.head[0],hy=p.head[1];
   els.cap.setAttribute('d',q([hx-r*.72,hy-r*.52],[hx,hy-r*1.02],[hx+r*.72,hy-r*.52]));
   els.face.setAttribute('d',line([hx+p.face[0]*.22,hy+p.face[1]*.18],[hx+p.face[0],hy+p.face[1]]));
   els.leftFoot.setAttribute('d',line([p.la[0]-8,p.la[1]],[p.la[0]+12,p.la[1]]));
   els.rightFoot.setAttribute('d',line([p.ra[0]-8,p.ra[1]],[p.ra[0]+12,p.ra[1]]));
-  els.leftHand.setAttribute('cx',p.lh[0]);els.leftHand.setAttribute('cy',p.lh[1]);
-  els.rightHand.setAttribute('cx',p.rh[0]);els.rightHand.setAttribute('cy',p.rh[1]);
-  els.shadow.setAttribute('cx',p.shadow[0]);els.shadow.setAttribute('cy',p.shadow[1]);els.shadow.setAttribute('rx',p.shadow[2]);
+  els.leftHand.setAttribute('cx',p.lh[0]); els.leftHand.setAttribute('cy',p.lh[1]);
+  els.rightHand.setAttribute('cx',p.rh[0]); els.rightHand.setAttribute('cy',p.rh[1]);
+  els.shadow.setAttribute('cx',p.shadow[0]); els.shadow.setAttribute('cy',p.shadow[1]); els.shadow.setAttribute('rx',p.shadow[2]);
 }
-let idx=0, from=poses[0], to=poses[1], start=performance.now(), transition=900, hold=500, labelShown=-1;
+let idx=0,from=poses[0],to=poses[1],start=performance.now(),transition=900,hold=500,labelShown=-1;
 function animate(now){
   const elapsed=now-start;
-  if(labelShown!==idx){
-    $('poseLabel').textContent=poses[idx].label;
-    $('poseHint').textContent=poses[idx].hint;
-    labelShown=idx;
-  }
-  if(elapsed < hold){setPose(from)}
-  else{
-    const t=Math.min(1,(elapsed-hold)/transition);
-    setPose(interp(from,to,ease(t)));
-    if(t>=1){
-      const stay=Math.max(450,poses[idx].ms-transition);
-      if(elapsed >= hold+transition+stay){
-        idx=(idx+1)%poses.length;
-        from=poses[idx];
-        to=poses[(idx+1)%poses.length];
-        start=now;
-        labelShown=-1;
-      }
-    }
-  }
+  if(labelShown!==idx){$('poseLabel').textContent=poses[idx].label;$('poseHint').textContent=poses[idx].hint;labelShown=idx;}
+  if(elapsed<hold){setPose(from)} else {const t=Math.min(1,(elapsed-hold)/transition);setPose(interp(from,to,ease(t)));if(t>=1){const stay=Math.max(450,poses[idx].ms-transition);if(elapsed>=hold+transition+stay){idx=(idx+1)%poses.length;from=poses[idx];to=poses[(idx+1)%poses.length];start=now;labelShown=-1;}}}
   requestAnimationFrame(animate);
 }
 setPose(poses[0]);requestAnimationFrame(animate);
-
-const track=$('track');
-track.innerHTML+=track.innerHTML;
-let tx=0,paused=false;
-function ticker(){
-  if(!paused){
-    tx-=.38;
-    if(Math.abs(tx)>=track.scrollWidth/2)tx=0;
-    track.style.transform='translateX('+tx+'px)';
-  }
-  requestAnimationFrame(ticker);
-}
-track.parentElement.addEventListener('mouseenter',()=>paused=true);
-track.parentElement.addEventListener('mouseleave',()=>paused=false);
-track.parentElement.addEventListener('touchstart',()=>paused=true,{passive:true});
-track.parentElement.addEventListener('touchend',()=>paused=false,{passive:true});
-ticker();
+const track=$('track');track.innerHTML+=track.innerHTML;let tx=0,paused=false;function ticker(){if(!paused){tx-=.38;if(Math.abs(tx)>=track.scrollWidth/2)tx=0;track.style.transform='translateX('+tx+'px)'}requestAnimationFrame(ticker)}
+track.parentElement.addEventListener('mouseenter',()=>paused=true);track.parentElement.addEventListener('mouseleave',()=>paused=false);track.parentElement.addEventListener('touchstart',()=>paused=true,{passive:true});track.parentElement.addEventListener('touchend',()=>paused=false,{passive:true});ticker();
 </script>
 </body>
 </html>
