@@ -59,6 +59,8 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
         <path id="rightFoot" class="body-line body-soft"/>
         <circle id="leftHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
         <circle id="rightHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+        <circle id="leftKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+        <circle id="rightKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
       </svg>
     </div>
 
@@ -92,7 +94,7 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
 
 <script>
 const $=id=>document.getElementById(id);
-const els={torsoL:$('torsoL'),torsoR:$('torsoR'),shoulders:$('shoulders'),hips:$('hips'),leftArm:$('leftArm'),rightArm:$('rightArm'),leftLeg:$('leftLeg'),rightLeg:$('rightLeg'),head:$('head'),cap:$('cap'),face:$('face'),leftFoot:$('leftFoot'),rightFoot:$('rightFoot'),leftHand:$('leftHand'),rightHand:$('rightHand'),shadow:$('floorShadow')};
+const els={torsoL:$('torsoL'),torsoR:$('torsoR'),shoulders:$('shoulders'),hips:$('hips'),leftArm:$('leftArm'),rightArm:$('rightArm'),leftLeg:$('leftLeg'),rightLeg:$('rightLeg'),head:$('head'),cap:$('cap'),face:$('face'),leftFoot:$('leftFoot'),rightFoot:$('rightFoot'),leftHand:$('leftHand'),rightHand:$('rightHand'),leftKnee:$('leftKnee'),rightKnee:$('rightKnee'),shadow:$('floorShadow')};
 const pt=(x,y)=>[x,y];
 const stand={head:pt(310,92),neck:pt(310,119),ls:pt(280,132),rs:pt(340,132),lh:pt(292,250),rh:pt(328,250),le:pt(275,194),re:pt(345,194),lhip:pt(292,258),rhip:pt(328,258),lk:pt(292,333),rk:pt(328,333),la:pt(286,406),ra:pt(334,406),face:pt(4,12),shadow:[310,414,105]};
 const secde={label:'Secde',hint:'Alın yerde',ms:2200,head:pt(388,388),neck:pt(365,376),ls:pt(335,355),rs:pt(360,360),le:pt(326,387),re:pt(354,392),lh:pt(318,407),rh:pt(346,410),lhip:pt(278,305),rhip:pt(306,310),lk:pt(250,344),rk:pt(292,350),la:pt(238,406),ra:pt(288,406),face:pt(12,4),shadow:[305,414,124]};
@@ -140,6 +142,8 @@ function setPose(p){
   els.rightFoot.setAttribute('d',line([p.ra[0]-8,p.ra[1]],[p.ra[0]+12,p.ra[1]]));
   els.leftHand.setAttribute('cx',p.lh[0]); els.leftHand.setAttribute('cy',p.lh[1]);
   els.rightHand.setAttribute('cx',p.rh[0]); els.rightHand.setAttribute('cy',p.rh[1]);
+  els.leftKnee.setAttribute('cx',p.lk[0]); els.leftKnee.setAttribute('cy',p.lk[1]);
+  els.rightKnee.setAttribute('cx',p.rk[0]); els.rightKnee.setAttribute('cy',p.rk[1]);
   els.shadow.setAttribute('cx',p.shadow[0]); els.shadow.setAttribute('cy',p.shadow[1]); els.shadow.setAttribute('rx',p.shadow[2]);
 }
 let idx=0,from=poses[0],to=poses[1],start=performance.now(),transition=900,hold=500,labelShown=-1;
