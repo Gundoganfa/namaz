@@ -19,9 +19,15 @@ h1{font:700 clamp(48px,7vw,78px)/.95 Georgia,"Times New Roman",serif;margin:0 0 
 #figure{width:100%;height:100%;display:block}.body-line{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.body-soft{stroke-width:4;opacity:.85}.garment{fill:none;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;opacity:.96}.rug{fill:none;stroke:var(--gold);stroke-width:3;opacity:.55}.shadow{fill:rgba(24,59,51,.035);stroke:none}
 #poseLabel{margin:18px 0 2px;font:700 30px/1 Georgia,"Times New Roman",serif}#poseHint{margin:0;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .surah{margin-top:54px}.surah-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}.surah h2{margin:0;font:700 36px/1 Georgia,"Times New Roman",serif}.surah-head span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.ticker{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 14px 36px rgba(24,59,51,.05)}.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:22px 0;will-change:transform}.tag{font-size:12px;letter-spacing:.16em;color:var(--muted);flex:none}.arabic{font-family:"Amiri","Times New Roman",serif;font-size:29px;direction:rtl;flex:none}.sep{color:var(--gold);font-size:18px;flex:none}
+.surah-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:stretch}
+.ticker{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 14px 36px rgba(24,59,51,.05);min-width:0}.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:22px 0;will-change:transform}.tag{font-size:12px;letter-spacing:.16em;color:var(--muted);flex:none}.arabic{font-family:"Amiri","Times New Roman",serif;font-size:29px;direction:rtl;flex:none}.sep{color:var(--gold);font-size:18px;flex:none}
+.asr-meaning{position:relative;overflow:hidden;min-height:190px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.68),rgba(255,255,255,.36));box-shadow:0 14px 36px rgba(24,59,51,.05);perspective:520px;mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%)}
+.asr-meaning:before{content:"ASR · TÜRKÇE";position:absolute;top:13px;right:16px;z-index:3;font-size:10px;letter-spacing:.15em;color:var(--muted)}
+.asr-crawl{position:absolute;left:24px;right:24px;top:0;text-align:center;font:600 17px/1.65 Georgia,"Times New Roman",serif;color:var(--ink);transform-origin:50% 0;animation:asrDown 13s linear infinite}
+.asr-crawl p{margin:0 0 14px}
+@keyframes asrDown{0%{transform:translateY(-120%) rotateX(18deg) scale(.92);opacity:0}10%{opacity:1}82%{opacity:1}100%{transform:translateY(120%) rotateX(18deg) scale(1.04);opacity:0}}
 footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:700px){header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}main{padding-top:32px}.stage{aspect-ratio:1/1.05;border-radius:28px}.sub{font-size:15px}.arabic{font-size:25px}.surah-head{align-items:flex-start;flex-direction:column}}
+@media(max-width:700px){header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}main{padding-top:32px}.stage{aspect-ratio:1/1.05;border-radius:28px}.sub{font-size:15px}.arabic{font-size:25px}.surah-head{align-items:flex-start;flex-direction:column}.surah-grid{grid-template-columns:1fr}.asr-meaning{min-height:210px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -73,15 +79,23 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
       <h2>Fâtiha · Asr</h2>
       <span>Kesintisiz akış</span>
     </div>
-    <div class="ticker">
-      <div class="track" id="track">
-        <span class="tag">FÂTİHA</span>
-        <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ | الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | الرَّحْمَٰنِ الرَّحِيمِ | مَالِكِ يَوْمِ الدِّينِ | إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ | اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ | صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
-        <span class="sep">✦</span>
-        <span class="tag">ASR</span>
-        <span class="arabic">وَالْعَصْرِ | إِنَّ الْإِنسَانَ لَفِي خُسْرٍ | إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ</span>
-        <span class="sep">✦</span>
+    <div class="surah-grid">
+      <div class="ticker">
+        <div class="track" id="track">
+          <span class="tag">FÂTİHA</span>
+          <span class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ | الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | الرَّحْمَٰنِ الرَّحِيمِ | مَالِكِ يَوْمِ الدِّينِ | إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ | اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ | صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</span>
+          <span class="sep">✦</span>
+          <span class="tag">ASR</span>
+          <span class="arabic">وَالْعَصْرِ | إِنَّ الْإِنسَانَ لَفِي خُسْرٍ | إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ</span>
+          <span class="sep">✦</span>
+        </div>
       </div>
+      <aside class="asr-meaning" aria-label="Asr suresinin Türkçe anlamı">
+        <div class="asr-crawl">
+          <p>Asra yemin olsun ki insan gerçekten ziyan içindedir.</p>
+          <p>Ancak iman eden, iyi işler yapan, birbirlerine hakkı ve sabrı tavsiye edenler bunun dışındadır.</p>
+        </div>
+      </aside>
     </div>
   </section>
 </main>
@@ -98,7 +112,7 @@ const els={torsoL:$('torsoL'),torsoR:$('torsoR'),shoulders:$('shoulders'),hips:$
 const pt=(x,y)=>[x,y];
 const stand={head:pt(310,92),neck:pt(310,119),ls:pt(280,132),rs:pt(340,132),lh:pt(292,250),rh:pt(328,250),le:pt(275,194),re:pt(345,194),lhip:pt(292,258),rhip:pt(328,258),lk:pt(292,333),rk:pt(328,333),la:pt(286,406),ra:pt(334,406),face:pt(4,12),shadow:[310,414,105]};
 const secde={label:'Secde',hint:'Alın ve dizler yerde',ms:2200,head:pt(388,388),neck:pt(365,376),ls:pt(335,355),rs:pt(360,360),le:pt(326,387),re:pt(354,392),lh:pt(318,407),rh:pt(346,410),lhip:pt(278,320),rhip:pt(306,324),lk:pt(248,401),rk:pt(286,401),la:pt(226,407),ra:pt(270,407),face:pt(12,4),shadow:[305,414,128]};
-const celse={label:'Celse',hint:'Topuklar üzerine oturuş',ms:1700,head:pt(316,170),neck:pt(316,198),ls:pt(286,212),rs:pt(346,212),le:pt(282,262),re:pt(350,262),lh:pt(278,312),rh:pt(344,312),lhip:pt(290,318),rhip:pt(328,318),lk:pt(250,350),rk:pt(362,350),la:pt(228,406),ra:pt(386,406),face:pt(4,12),shadow:[307,414,118]};
+const celse={label:'Celse',hint:'Dizler yerde · topuklar üzerine oturuş',ms:1800,head:pt(316,166),neck:pt(316,194),ls:pt(286,208),rs:pt(346,208),le:pt(282,258),re:pt(346,258),lh:pt(278,306),rh:pt(340,306),lhip:pt(300,320),rhip:pt(330,320),lk:pt(276,401),rk:pt(324,401),la:pt(242,407),ra:pt(358,407),face:pt(4,12),shadow:[307,414,120]};
 const tahiyyat={label:'Tahiyyat',hint:'Diz üstü oturuş',ms:2600,head:pt(316,166),neck:pt(316,194),ls:pt(286,208),rs:pt(346,208),le:pt(282,258),re:pt(340,252),lh:pt(278,312),rh:pt(334,300),lhip:pt(300,316),rhip:pt(330,316),lk:pt(286,401),rk:pt(322,401),la:pt(250,407),ra:pt(356,407),face:pt(4,12),shadow:[307,414,120]};
 const poses=[
   {label:'Niyet',hint:'Hazırlık',ms:1300,...stand},
