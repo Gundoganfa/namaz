@@ -13,21 +13,22 @@ header{height:82px;display:flex;align-items:center;justify-content:space-between
 .brand{font:700 36px/1 Georgia,"Times New Roman",serif;letter-spacing:-.02em}.header-note{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 main{padding:46px 0 52px}.hero{text-align:center}.kicker{margin:0 0 10px;color:var(--muted);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 h1{font:700 clamp(48px,7vw,78px)/.95 Georgia,"Times New Roman",serif;margin:0 0 10px}.sub{margin:0 auto 28px;max-width:580px;color:var(--muted);line-height:1.7;font-size:16px}
-.stage{position:relative;width:min(760px,100%);margin:0 auto;aspect-ratio:1.34/1;border:1px solid rgba(179,154,112,.26);border-radius:36px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.32)),radial-gradient(circle at 50% 18%,rgba(179,154,112,.13),transparent 34%);box-shadow:0 24px 70px rgba(24,59,51,.08)}
+.hero-visual{display:grid;grid-template-columns:minmax(0,760px) 260px;gap:28px;align-items:center;justify-content:center}
+.stage{position:relative;width:100%;margin:0 auto;aspect-ratio:1.34/1;border:1px solid rgba(179,154,112,.26);border-radius:36px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(255,255,255,.32)),radial-gradient(circle at 50% 18%,rgba(179,154,112,.13),transparent 34%);box-shadow:0 24px 70px rgba(24,59,51,.08)}
 .stage:before{content:"";position:absolute;left:12%;right:12%;top:8%;bottom:11%;border:1px solid rgba(179,154,112,.25);border-bottom:0;border-radius:50% 50% 20px 20px;pointer-events:none}
 .stage:after{content:"";position:absolute;left:14%;right:14%;bottom:12%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
 #figure{width:100%;height:100%;display:block}.body-line{fill:none;stroke:var(--ink);stroke-width:6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}.body-soft{stroke-width:4;opacity:.85}.garment{fill:none;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;opacity:.96}.rug{fill:none;stroke:var(--gold);stroke-width:3;opacity:.55}.shadow{fill:rgba(24,59,51,.035);stroke:none}
 #poseLabel{margin:18px 0 2px;font:700 30px/1 Georgia,"Times New Roman",serif}#poseHint{margin:0;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .surah{margin-top:54px}.surah-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}.surah h2{margin:0;font:700 36px/1 Georgia,"Times New Roman",serif}.surah-head span{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.surah-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:stretch}
+.surah-grid{display:block}
 .ticker{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.56);box-shadow:0 14px 36px rgba(24,59,51,.05);min-width:0}.track{display:flex;gap:28px;align-items:center;white-space:nowrap;padding:22px 0;will-change:transform}.tag{font-size:12px;letter-spacing:.16em;color:var(--muted);flex:none}.arabic{font-family:"Amiri","Times New Roman",serif;font-size:29px;direction:rtl;flex:none}.sep{color:var(--gold);font-size:18px;flex:none}
-.asr-meaning{position:relative;overflow:hidden;min-height:190px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.68),rgba(255,255,255,.36));box-shadow:0 14px 36px rgba(24,59,51,.05);perspective:520px;mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%)}
-.asr-meaning:before{content:"ASR · TÜRKÇE";position:absolute;top:13px;right:16px;z-index:3;font-size:10px;letter-spacing:.15em;color:var(--muted)}
-.asr-crawl{position:absolute;left:24px;right:24px;top:0;text-align:center;font:600 17px/1.65 Georgia,"Times New Roman",serif;color:var(--ink);transform-origin:50% 0;animation:asrDown 13s linear infinite}
+.asr-meaning{position:relative;overflow:hidden;min-height:300px;perspective:520px;mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 85%,transparent 100%)}
+.asr-meaning:before{content:"ASR · TÜRKÇE";position:absolute;top:8px;right:0;z-index:3;font-size:10px;letter-spacing:.15em;color:var(--muted)}
+.asr-crawl{position:absolute;left:0;right:0;bottom:0;text-align:center;font:600 17px/1.7 Georgia,"Times New Roman",serif;color:var(--ink);transform-origin:50% 100%;animation:asrUp 14s linear infinite}
 .asr-crawl p{margin:0 0 14px}
-@keyframes asrDown{0%{transform:translateY(-120%) rotateX(18deg) scale(.92);opacity:0}10%{opacity:1}82%{opacity:1}100%{transform:translateY(120%) rotateX(18deg) scale(1.04);opacity:0}}
+@keyframes asrUp{0%{transform:translateY(120%) rotateX(16deg) scale(.96);opacity:0}10%{opacity:1}82%{opacity:1}100%{transform:translateY(-135%) rotateX(16deg) scale(1.04);opacity:0}}
 footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:28px 0 36px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-@media(max-width:700px){header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}main{padding-top:32px}.stage{aspect-ratio:1/1.05;border-radius:28px}.sub{font-size:15px}.arabic{font-size:25px}.surah-head{align-items:flex-start;flex-direction:column}.surah-grid{grid-template-columns:1fr}.asr-meaning{min-height:210px}}
+@media(max-width:700px){header{height:auto;padding:20px 0;align-items:flex-start;gap:12px;flex-direction:column}main{padding-top:32px}.hero-visual{grid-template-columns:1fr;gap:18px}.stage{aspect-ratio:1/1.05;border-radius:28px}.asr-meaning{min-height:220px}.sub{font-size:15px}.arabic{font-size:25px}.surah-head{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -44,30 +45,38 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
     <h1>Namaz</h1>
     
 
-    <div class="stage" aria-label="Namaz hareketlerini gösteren akıcı line art animasyon">
-      <svg id="figure" viewBox="0 0 620 470" role="img" aria-labelledby="figureTitle figureDesc">
-        <title id="figureTitle">Namaz hareketleri</title>
-        <desc id="figureDesc">Tekbir, kıyam, rükû, doğrulma, secde, oturuş ve selam hareketleri arasında akıcı şekilde geçen çizgisel insan figürü.</desc>
-        <ellipse id="floorShadow" class="shadow" cx="310" cy="414" rx="128" ry="13"/>
-        <path class="rug" d="M150 423 Q310 410 470 423"/>
-        <path id="torsoL" class="body-line garment"/>
-        <path id="torsoR" class="body-line garment"/>
-        <path id="shoulders" class="body-line body-soft"/>
-        <path id="hips" class="body-line body-soft"/>
-        <path id="leftArm" class="body-line"/>
-        <path id="rightArm" class="body-line"/>
-        <path id="leftLeg" class="body-line"/>
-        <path id="rightLeg" class="body-line"/>
-        <circle id="head" class="body-line" r="20"/>
-        <path id="cap" class="body-line body-soft"/>
-        <path id="face" class="body-line body-soft"/>
-        <path id="leftFoot" class="body-line body-soft"/>
-        <path id="rightFoot" class="body-line body-soft"/>
-        <circle id="leftHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-        <circle id="rightHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-        <circle id="leftKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-        <circle id="rightKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
-      </svg>
+    <div class="hero-visual">
+      <div class="stage" aria-label="Namaz hareketlerini gösteren akıcı line art animasyon">
+        <svg id="figure" viewBox="0 0 620 470" role="img" aria-labelledby="figureTitle figureDesc">
+          <title id="figureTitle">Namaz hareketleri</title>
+          <desc id="figureDesc">Tekbir, kıyam, rükû, doğrulma, secde, oturuş ve selam hareketleri arasında akıcı şekilde geçen çizgisel insan figürü.</desc>
+          <ellipse id="floorShadow" class="shadow" cx="310" cy="414" rx="128" ry="13"/>
+          <path class="rug" d="M150 423 Q310 410 470 423"/>
+          <path id="torsoL" class="body-line garment"/>
+          <path id="torsoR" class="body-line garment"/>
+          <path id="shoulders" class="body-line body-soft"/>
+          <path id="hips" class="body-line body-soft"/>
+          <path id="leftArm" class="body-line"/>
+          <path id="rightArm" class="body-line"/>
+          <path id="leftLeg" class="body-line"/>
+          <path id="rightLeg" class="body-line"/>
+          <circle id="head" class="body-line" r="20"/>
+          <path id="cap" class="body-line body-soft"/>
+          <path id="face" class="body-line body-soft"/>
+          <path id="leftFoot" class="body-line body-soft"/>
+          <path id="rightFoot" class="body-line body-soft"/>
+          <circle id="leftHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+          <circle id="rightHand" r="4.2" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+          <circle id="leftKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+          <circle id="rightKnee" r="5.5" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"/>
+        </svg>
+      </div>
+      <aside class="asr-meaning" aria-label="Asr suresinin Türkçe anlamı">
+        <div class="asr-crawl">
+          <p>Asra yemin olsun ki insan gerçekten ziyan içindedir.</p>
+          <p>Ancak iman eden, iyi işler yapan, birbirlerine hakkı ve sabrı tavsiye edenler bunun dışındadır.</p>
+        </div>
+      </aside>
     </div>
 
     <div id="poseLabel">Niyet</div>
@@ -90,12 +99,6 @@ footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;paddin
           <span class="sep">✦</span>
         </div>
       </div>
-      <aside class="asr-meaning" aria-label="Asr suresinin Türkçe anlamı">
-        <div class="asr-crawl">
-          <p>Asra yemin olsun ki insan gerçekten ziyan içindedir.</p>
-          <p>Ancak iman eden, iyi işler yapan, birbirlerine hakkı ve sabrı tavsiye edenler bunun dışındadır.</p>
-        </div>
-      </aside>
     </div>
   </section>
 </main>
