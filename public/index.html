@@ -160,7 +160,7 @@ function animate(now){
   requestAnimationFrame(animate);
 }
 setPose(poses[0]);requestAnimationFrame(animate);
-const track=$('track');track.innerHTML+=track.innerHTML;let tx=0,paused=false;function ticker(){if(!paused){tx-=.38;if(Math.abs(tx)>=track.scrollWidth/2)tx=0;track.style.transform='translateX('+tx+'px)'}requestAnimationFrame(ticker)}
+const track=$('track');track.innerHTML+=track.innerHTML;let tx=-(track.scrollWidth/2),paused=false;function ticker(){if(!paused){tx+=.38;if(tx>=0)tx=-(track.scrollWidth/2);track.style.transform='translateX('+tx+'px)'}requestAnimationFrame(ticker)}
 track.parentElement.addEventListener('mouseenter',()=>paused=true);track.parentElement.addEventListener('mouseleave',()=>paused=false);track.parentElement.addEventListener('touchstart',()=>paused=true,{passive:true});track.parentElement.addEventListener('touchend',()=>paused=false,{passive:true});ticker();
 </script>
 </body>
