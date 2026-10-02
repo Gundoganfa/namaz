@@ -132,8 +132,14 @@ function setPose(p){
   els.hips.setAttribute('d',q(p.lhip,[(p.lhip[0]+p.rhip[0])/2,(p.lhip[1]+p.rhip[1])/2+7],p.rhip));
   els.leftArm.setAttribute('d',q(p.ls,p.le,p.lh));
   els.rightArm.setAttribute('d',q(p.rs,p.re,p.rh));
-  els.leftLeg.setAttribute('d',q(p.lhip,p.lk,p.la));
-  els.rightLeg.setAttribute('d',q(p.rhip,p.rk,p.ra));
+  els.leftLeg.setAttribute('d',
+    'M '+p.lhip[0]+' '+p.lhip[1]+' L '+p.lk[0]+' '+p.lk[1]+
+    ' M '+p.lk[0]+' '+p.lk[1]+' L '+p.la[0]+' '+p.la[1]
+  );
+  els.rightLeg.setAttribute('d',
+    'M '+p.rhip[0]+' '+p.rhip[1]+' L '+p.rk[0]+' '+p.rk[1]+
+    ' M '+p.rk[0]+' '+p.rk[1]+' L '+p.ra[0]+' '+p.ra[1]
+  );
   els.head.setAttribute('cx',p.head[0]); els.head.setAttribute('cy',p.head[1]);
   const r=20,hx=p.head[0],hy=p.head[1];
   els.cap.setAttribute('d',q([hx-r*.72,hy-r*.52],[hx,hy-r*1.02],[hx+r*.72,hy-r*.52]));
